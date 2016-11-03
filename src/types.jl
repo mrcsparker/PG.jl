@@ -18,15 +18,6 @@ typealias pgthreadlock_t Ptr{Void}
 # Skipping MacroDefinition: PQsetdb ( M_PGHOST , M_PGPORT , M_PGOPT , M_PGTTY , M_DBNAME ) PQsetdbLogin ( M_PGHOST , M_PGPORT , M_PGOPT , M_PGTTY , M_DBNAME , NULL , NULL )
 # Skipping MacroDefinition: PQfreeNotify ( ptr ) PQfreemem ( ptr )
 
-type pg_conn
-end
-
-type pg_result
-end
-
-type pg_cancel
-end
-
 type pgNotify
     relname::Cstring
     be_pid::Cint
@@ -41,19 +32,6 @@ type PGnotify
     next::Ptr{pgNotify}
 end
 
-type _PQprintOpt
-    header::pqbool
-    align::pqbool
-    standard::pqbool
-    html3::pqbool
-    expanded::pqbool
-    pager::pqbool
-    fieldSep::Cstring
-    tableOpt::Cstring
-    caption::Cstring
-    fieldName::Ptr{Cstring}
-end
-
 type PQprintOpt
     header::pqbool
     align::pqbool
@@ -65,16 +43,6 @@ type PQprintOpt
     tableOpt::Cstring
     caption::Cstring
     fieldName::Ptr{Cstring}
-end
-
-type _PQconninfoOption
-    keyword::Cstring
-    envvar::Cstring
-    compiled::Cstring
-    val::Cstring
-    label::Cstring
-    dispchar::Cstring
-    dispsize::Cint
 end
 
 type PQconninfoOption
@@ -91,16 +59,6 @@ type PQArgBlock
     len::Cint
     isint::Cint
     u::Void
-end
-
-type pgresAttDesc
-    name::Cstring
-    tableid::Oid
-    columnid::Cint
-    format::Cint
-    typid::Oid
-    typlen::Cint
-    atttypmod::Cint
 end
 
 type PGresAttDesc
