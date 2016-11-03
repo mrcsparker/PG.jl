@@ -1,0 +1,4 @@
+deps/deps.jl
+html_node
+*.html #Ignore HTML documentation
+scratch
